@@ -7,14 +7,16 @@ import time
 from pathlib import Path
 from collections import deque
 
+MODELS_DIR = Path(__file__).resolve().parent.parent / "models" / "models"
+
 def run():
 
     st.markdown("<h2 style='text-align:center;'>🧠 Emotion Monitoring</h2>", unsafe_allow_html=True)
     st.write("System detects **Anger**, **Fatigue**, and **Stress** in real-time.")
 
     # --- Model Paths ---
-    model_path = Path(r"C:\Users\sandeep\OneDrive\Documents\nueral_drive\fer_selected\emotion_model.pkl")
-    shape_path = Path(r"C:\Users\sandeep\OneDrive\Documents\nueral_drive\fer_selected\shape_predictor_68_face_landmarks.dat")
+    model_path = MODELS_DIR / "emotion_model.pkl"
+    shape_path = MODELS_DIR / "shape_predictor_68_face_landmarks.dat"
 
     if not model_path.exists():
         st.error("❌ Emotion model missing!")

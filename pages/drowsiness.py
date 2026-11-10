@@ -5,9 +5,12 @@ import numpy as np
 import threading
 import simpleaudio as sa
 import time
+from pathlib import Path
 from scipy.spatial import distance
 
-alert_sound_path = r"C:\Users\sandeep\OneDrive\Documents\nueral_drive\sounds\alert.wav"
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODELS_DIR = BASE_DIR / "models" / "models"
+alert_sound_path = str(BASE_DIR / "sounds" / "alert.wav")
 
 # --- Alert Sound ---
 def play_alert_sound():
@@ -95,7 +98,7 @@ if st.session_state.run_drowsy:
 
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor(
-        r"C:\Users\sandeep\OneDrive\Documents\nueral_drive\fer_selected\shape_predictor_68_face_landmarks.dat"
+        str(MODELS_DIR / "shape_predictor_68_face_landmarks.dat")
     )
 
     (lStart, lEnd) = (42, 48)

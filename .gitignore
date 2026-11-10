@@ -6,3 +6,7 @@ __pycache__/
 .env
 .vscode/
 .idea/
+
+# Datasets (download separately, see README)
+fer2013/
+fer_selected/

@@ -97,17 +97,20 @@ drowsiness-detection/
 ├── requirements.txt
 ├── filter_fer_folders.py
 ├── pages/
-│   ├── Drowsiness.py
-│   ├── Emotion.py
-│   └── VoiceFatigue.py
+│   ├── drowsiness.py
+│   ├── emotion.py
+│   ├── fatigue_score.py
+│   └── voice.py
 ├── models/
-├── fer2013/
-├── fer_selected/
 ├── sounds/
 └── .gitignore
 ```
 
 This is a representative overview of the repository. Individual directories may contain additional files and assets.
+
+## 📦 Dataset
+
+The emotion model was trained on a subset of the [FER-2013 dataset](https://www.kaggle.com/datasets/msambare/fer2013). The images are not stored in this repository. To retrain, download FER-2013, place it in a local `fer2013/` folder (ignored by git) and run `filter_fer_folders.py`. The trained model and the dlib 68-point landmark file are included under `models/models/`.
 
 ## 🚀 Getting Started
 
